@@ -31,3 +31,9 @@
 //   (48, 'kuddus', 26, 'male', 2.08, 'rangput'),
 //   (09, 'easha', 27, 'female', 5.00, 'narshingdi'),
 //   (22, 'rahim', 24, 'male', 3.58, 'panchbibi');
+
+
+// select
+
+// SELECT Name,GPA FROM student_details;
+// SELECT * FROM student_details;

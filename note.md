@@ -51,3 +51,15 @@ INSERT INTO tableName VALUES
 (data),
 (data);
 ```
+
+- select
+
+```
+SELECT column1, column2, ...
+FROM table_name;
+```
+
+```
+SELECT *
+FROM table_name;
+```
