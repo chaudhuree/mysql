@@ -72,6 +72,11 @@ SELECT column_name(s)
 FROM table_name
 LIMIT number;
 ```
+```
+SELECT column_name(s)
+FROM table_name
+LIMIT skip,number_to_show;
+```
 
 - DISTINCT
 
