@@ -42,3 +42,5 @@
 
 // SELECT * FROM student_details LIMIT 5;
 
+// DISTINCT
+// SELECT DISTINCT city FROM student_details;
