@@ -1,3 +1,6 @@
+DDL-> create,alter,drop
+DML--> insert,select,update,delete
+
 - show databases
 
 ```
@@ -26,4 +29,25 @@ CREATE TABLE student(
   Gender varchar(10),
   PRIMARY KEY(Roll)
 );
+```
+
+- rename table
+
+```
+RENAME TABLE old_name TO new_name
+```
+
+- drop table
+
+```
+DROP TABLE table_name;
+```
+
+- insert data
+
+```
+INSERT INTO tableName VALUES
+(data),
+(data),
+(data);
 ```
