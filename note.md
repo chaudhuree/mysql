@@ -1,5 +1,6 @@
-DDL-> create,alter,drop
-DML--> insert,select,update,delete
+> DDL-> create,alter,drop
+
+> DML--> insert,select,update,delete
 
 - show databases
 
@@ -62,4 +63,12 @@ FROM table_name;
 ```
 SELECT *
 FROM table_name;
+```
+
+- limit
+
+```
+SELECT column_name(s)
+FROM table_name
+LIMIT number;
 ```

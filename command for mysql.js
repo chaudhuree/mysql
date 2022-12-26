@@ -37,3 +37,8 @@
 
 // SELECT Name,GPA FROM student_details;
 // SELECT * FROM student_details;
+
+// limit
+
+// SELECT * FROM student_details LIMIT 5;
+
