@@ -44,3 +44,5 @@
 
 // DISTINCT
 // SELECT DISTINCT city FROM student_details;
+
+// add two number in javascript
