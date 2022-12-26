@@ -7,3 +7,6 @@ key==>
 1.primary key
 2.composite primary key
 3.foreign key 
+
+create databse:
+CREATE DATABASE NAME
