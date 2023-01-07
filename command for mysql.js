@@ -79,7 +79,7 @@
 // CREATE TABLE Teacher (
 //   ID int NOT NULL AUTO_INCREMENT,
 //   Name varchar(15) NOT NULL,
-//   Salary int NOT NULL,
+//   Salary int,
 //   PRIMARY KEY (ID)
 // );
 
@@ -90,4 +90,11 @@
 //   ('sohan', 50000); //works fine and set id 1001
 
 // INSERT INTO Teacher (Name) VALUES
-//   ('sohan'); //throws error because salary is not set and it is not null
+//   ('sohan'); //works fine and set id 1002 and salary null
+
+
+// docs: update
+// UPDATE student_details SET GPA=4.00 WHERE Roll=12;
+// UPDATE Teacher SET Salary=Salary+5000 WHERE ID=1000;
+
+// docs: delete
