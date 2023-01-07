@@ -98,3 +98,5 @@
 // UPDATE Teacher SET Salary=Salary+5000 WHERE ID=1000;
 
 // docs: delete
+// DELETE FROM student_details WHERE Roll=12;
+// DELETE FROM Teacher WHERE ID=1000;
