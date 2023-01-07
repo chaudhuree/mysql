@@ -1,8 +1,8 @@
-// create database
+//docs: create database
 
 // CREATE DATABASE college;
 
-// table with name student
+// docs:table with name student
 
 // CREATE TABLE student(
 // 	   Roll int,
@@ -14,15 +14,15 @@
 //     PRIMARY KEY(Roll)
 // );
 
-// rename table
+//docs: rename table
 
 // RENAME TABLE student TO student_details ;
 
-// drop table
+//docs: drop table
 
 // DROP TABLE student_details;
 
-// insert data in table
+//docs: insert data in table
 
 // INSERT INTO student_details VALUES
 //   (56, 'sohan', 27, 'male', 4.88, 'panchbibi'),
@@ -33,24 +33,24 @@
 //   (22, 'rahim', 24, 'male', 3.58, 'panchbibi');
 
 
-// select
+//docs: select
 
 // SELECT Name,GPA FROM student_details;
 // SELECT * FROM student_details;
 
-// limit
+//docs: limit
 
 // SELECT * FROM student_details LIMIT 5;
 
-// DISTINCT
+//docs: DISTINCT
 // SELECT DISTINCT city FROM student_details;
 
 
-// order by
+//docs: order by
 // SELECT Name,Roll,Age FROM student_details ORDER BY GPA;
 // SELECT * FROM student_details ORDER BY GPA DESC;
 
-// where clause
+//docs: where clause
 // SELECT * FROM student_details WHERE GPA > 4.00;
 // SELECT * FROM student_details WHERE GPA > 4.00 AND Age > 25;
 // SELECT * FROM student_details WHERE GPA > 4.00 OR Age > 25;
@@ -63,6 +63,31 @@
 // SELECT * FROM student_details WHERE Roll>12 AND (Gender="female" OR Age>25);
 // SELECT Name From student_details WHERE Name LIKE 's%';
 
-// as
+//docs: as
 // SELECT Name AS "Student Name", GPA AS Student_GPA FROM student_details;
 // for firstone iv used double quotes because there has space in between them
+
+//docs: constraints & auto increment
+
+// a. NOT NULL
+// b. UNIQUE
+// c. PRIMARY KEY
+// d. CHECK
+// e. DEFAULT
+
+// fn: constraints
+// CREATE TABLE Teacher (
+//   ID int NOT NULL AUTO_INCREMENT,
+//   Name varchar(15) NOT NULL,
+//   Salary int NOT NULL,
+//   PRIMARY KEY (ID)
+// );
+
+// INSERT INTO Teacher (ID,Name,Salary) VALUES
+//   (1000,'sohan', 50000);  //works fine
+
+// INSERT INTO Teacher (Name,Salary) VALUES
+//   ('sohan', 50000); //works fine and set id 1001
+
+// INSERT INTO Teacher (Name) VALUES
+//   ('sohan'); //throws error because salary is not set and it is not null
