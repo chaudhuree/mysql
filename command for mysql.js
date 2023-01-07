@@ -49,3 +49,16 @@
 // order by
 // SELECT Name,Roll,Age FROM student_details ORDER BY GPA;
 // SELECT * FROM student_details ORDER BY GPA DESC;
+
+// where clause
+// SELECT * FROM student_details WHERE GPA > 4.00;
+// SELECT * FROM student_details WHERE GPA > 4.00 AND Age > 25;
+// SELECT * FROM student_details WHERE GPA > 4.00 OR Age > 25;
+// SELECT * FROM student_details WHERE GPA BETWEEN 3.00 AND 4.00;
+// SELECT * FROM student_details WHERE City='panchbibi';
+// SELECT * FROM student_details WHERE Roll IN (12,43,48);
+// SELECT * FROM student_details WHERE Roll NOT IN (12,43,48) ;
+// SELECT * FROM student_details WHERE Roll = 12;
+// SELECT * FROM student_details WHERE Roll != 12;
+// SELECT * FROM student_details WHERE Roll>12 AND (Gender="female" OR Age>25);
+// SELECT Name From student_details WHERE Name LIKE 's%';
