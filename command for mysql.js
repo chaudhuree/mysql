@@ -100,3 +100,7 @@
 // docs: delete
 // DELETE FROM student_details WHERE Roll=12;
 // DELETE FROM Teacher WHERE ID=1000;
+
+// docs: Upper & Lower
+// SELECT UPPER(Name) AS "Student Name" FROM student_details;
+
