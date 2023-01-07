@@ -104,3 +104,5 @@
 // docs: Upper & Lower
 // SELECT UPPER(Name) AS "Student Name" FROM student_details;
 
+// docs: concat
+// SELECT CONCAT(Name, ' is', Age," years old") AS "Student Name" FROM student_details;
