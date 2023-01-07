@@ -62,3 +62,7 @@
 // SELECT * FROM student_details WHERE Roll != 12;
 // SELECT * FROM student_details WHERE Roll>12 AND (Gender="female" OR Age>25);
 // SELECT Name From student_details WHERE Name LIKE 's%';
+
+// as
+// SELECT Name AS "Student Name", GPA AS Student_GPA FROM student_details;
+// for firstone iv used double quotes because there has space in between them

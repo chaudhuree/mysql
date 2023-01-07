@@ -221,7 +221,7 @@ WHERE city NOT IN ('Tampere','Helsinki','Oulu');
 SELECT *
 FROM students;
 -- find anyone name starts with s
-WHERE name LIKE '%s';
+WHERE name LIKE 's%';
 -- find anyone name ends with s
 WHERE name LIKE '%s';
 -- find anyone name contains hi
