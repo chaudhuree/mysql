@@ -5,7 +5,7 @@
 // table with name student
 
 // CREATE TABLE student(
-// 	Roll int,
+// 	   Roll int,
 //     Name varchar(15),
 //     Age int(4),
 //     Gender varchar(10),
@@ -44,3 +44,8 @@
 
 // DISTINCT
 // SELECT DISTINCT city FROM student_details;
+
+
+// order by
+// SELECT Name,Roll,Age FROM student_details ORDER BY GPA;
+// SELECT * FROM student_details ORDER BY GPA DESC;
