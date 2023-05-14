@@ -32,7 +32,6 @@
 //   (09, 'easha', 27, 'female', 5.00, 'narshingdi'),
 //   (22, 'rahim', 24, 'male', 3.58, 'panchbibi');
 
-
 //docs: select
 
 // SELECT Name,GPA FROM student_details;
@@ -44,7 +43,6 @@
 
 //docs: DISTINCT
 // SELECT DISTINCT city FROM student_details;
-
 
 //docs: order by
 // SELECT Name,Roll,Age FROM student_details ORDER BY GPA;
@@ -92,7 +90,6 @@
 // INSERT INTO Teacher (Name) VALUES
 //   ('sohan'); //works fine and set id 1002 and salary null
 
-
 // docs: update
 // UPDATE student_details SET GPA=4.00 WHERE Roll=12;
 // UPDATE Teacher SET Salary=Salary+5000 WHERE ID=1000;
@@ -106,3 +103,59 @@
 
 // docs: concat
 // SELECT CONCAT(Name, ' is', Age," years old") AS "Student Name" FROM student_details;
+
+// docs: count
+// SELECT COUNT(*) AS "Total Student" FROM student_details;
+
+// docs: sum
+// SELECT SUM(Salary) AS "Total Salary" FROM Teacher;
+
+// docs: max
+// SELECT MAX(Salary) AS "Maximum Salary" FROM Teacher;
+
+// docs: min
+// SELECT MIN(Salary) AS "Minimum Salary" FROM Teacher;
+
+// docs: avg
+// SELECT AVG(Salary) AS "Average Salary" FROM Teacher;
+
+// docs: truncate
+// SELECT TRUNCATE(10.1234562, 3) AS "Truncated Number";
+
+// query testing
+// SELECT MIN(GPA) AS "Minimum GPA" FROM student_details WHERE Gender="female";
+
+//docs: ALTEER TABLE
+// this is used to add new column in table
+// and also used to delete column from table
+// aswell as used to modify column name and data type
+
+// add new column in table
+// ALTER TABLE student_details ADD Email varchar(30);
+
+// renaming column
+// ALTER TABLE student_details CHANGE Email Email_Address varchar(30);
+
+// delete column
+// ALTER TABLE student_details DROP COLUMN Email_Address;
+
+// docs: GROUP BY
+// this is used to divide rows in a table into smaller groups
+
+//syntax
+
+// SELECT column_name(s)
+// FROM table_name
+// WHERE condition
+// GROUP BY group_by_expression
+// ORDER BY column_name(s);
+
+//note: we can use directly select column_name(s) from table_name group by column_name(s);
+
+//note: but if we use where and order then we have to use group by after where and before order by
+
+// SELECT City FROM student_details GROUP BY City;
+
+// if the data table has  column in numeric field, then we can sum the column or avg the column
+
+// SELECT City, SUM(GPA) FROM student_details GROUP BY City ORDER BY City;

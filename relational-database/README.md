@@ -1,7 +1,5 @@
 # Relational Database
 
-- [My MySQL playlist](https://www.youtube.com/playlist?list=PLgH5QX0i9K3qLcx9DvVDWmNJ7riPvxzCD)
-
 ## 1. introduction to Database
 
 ### Some important terms
