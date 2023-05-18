@@ -159,3 +159,104 @@
 // if the data table has  column in numeric field, then we can sum the column or avg the column
 
 // SELECT City, SUM(GPA) FROM student_details GROUP BY City ORDER BY City;
+
+//docs: TRUNCATE TABLE
+// this is used to delete all rows from table
+
+// TRUNCATE TABLE student_details;
+
+//docs: joining tables
+
+// suppose there are two tables
+// 1. student_details
+// 2. exam_results
+
+// CREATE TABLE student_details(
+//     Roll int NOT NULL AUTO_INCREMENT,
+//     Name varchar(15),
+//     Age int(4),
+//     Gender varchar(10),
+//     PRIMARY KEY(Roll)
+// );
+
+// insert data in student_details table
+
+// INSERT INTO student_details (Roll, Name, Age, Gender)
+// VALUES
+//(101,'Rahim',15,'Male');
+
+//first run this command then run the next command as roll is auto incremented so no need to insert roll from next time
+
+// INSERT INTO student_details (Roll, Name, Age, Gender)
+// VALUES
+//('Shimuli',14,'Female'),
+//('Abbas',15,'Male'),
+//('Easha',16,'Female'),
+//('Toufiq',13,'Male'),
+//('Habib',15,'Male'),
+//('Rubina',15,'Female'),
+//('Nadia',16,'Female'),
+//('Shamonti',14,'Female');
+
+// CREATE TABLE exam_results(
+//     Reg_No int NOT NULL,
+//     Roll int,
+//     GPA double(3,2),
+//     Group_name varchar(15),
+//     PRIMARY KEY(Reg_No)
+// );
+
+// INSERt INTO exam_results (Reg_No, Roll, GPA, Group_name) VALUES
+// (1001,103,4.00,'Science'),
+// (1002,105,3.50,'Commerce'),
+// (1003,104,3.00,'Arts'),
+// (1004,101,3.25,'Science'),
+// (1005,102,3.75,'Commerce');
+
+// now join the two tables based on roll
+
+// SELECT student_details.Roll, Reg_no,Name,Gender,GPA
+// FROM student_details,exam_results
+// WHERE student_details.Roll=exam_results.Roll;
+
+// docs: JOIN Clause
+// this is used to combine rows from two or more tables, based on a related column between them and also rename the table name
+
+// SELECT std.Roll, exam.Reg_no,std.Name,std.Gender,exam.GPA
+// FROM student_details as std,exam_results as exam
+// WHERE std.Roll=exam.Roll;
+
+//note: used join
+// SELECT std.Roll, exam.Reg_no,std.Name,std.Gender,exam.GPA
+// FROM student_details as std JOIN exam_results as exam
+// ON std.Roll=exam.Roll;
+
+
+// docs: INNER JOIN
+// only return rows where there is a match in both tables
+
+//SELECT std.Roll,std.Name,std.Gender,exam.GPA,exam.Group_name
+//FROM student_details as std,exam_results as exam
+//WHERE std.Roll=exam.Roll;
+
+
+//SELECT std.Roll,std.Name,std.Gender,exam.GPA,exam.Group_name
+//FROM student_details as std INNER JOIN exam_results as exam
+//ON std.Roll=exam.Roll;
+
+
+//docs: LEFT JOIN
+//LEFT JOIN (or LEFT OUTER JOIN): This will return all the rows from the left table, and the matched rows from the right table. If no match, the result is NULL on the right side.
+
+//SELECT std.Roll,std.Name,std.Gender,exam.GPA,exam.Group_name
+//FROM student_details as std LEFT JOIN exam_results as exam
+//ON std.Roll=exam.Roll;
+
+// it will return all rows from left table and matched rows from right table and other left table rows will be null
+
+//docs: RIGHT JOIN
+//RIGHT JOIN (or RIGHT OUTER JOIN): This will return all the rows from the right table, and the matched rows from the left table. If no match, the result is NULL on the left side.
+
+//SELECT std.Roll,std.Name,std.Gender,exam.GPA,exam.Group_name
+//FROM student_details as std RIGHT JOIN exam_results as exam
+//ON std.Roll=exam.Roll;
