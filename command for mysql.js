@@ -231,7 +231,6 @@
 // FROM student_details as std JOIN exam_results as exam
 // ON std.Roll=exam.Roll;
 
-
 // docs: INNER JOIN
 // only return rows where there is a match in both tables
 
@@ -239,11 +238,9 @@
 //FROM student_details as std,exam_results as exam
 //WHERE std.Roll=exam.Roll;
 
-
 //SELECT std.Roll,std.Name,std.Gender,exam.GPA,exam.Group_name
 //FROM student_details as std INNER JOIN exam_results as exam
 //ON std.Roll=exam.Roll;
-
 
 //docs: LEFT JOIN
 //LEFT JOIN (or LEFT OUTER JOIN): This will return all the rows from the left table, and the matched rows from the right table. If no match, the result is NULL on the right side.
@@ -260,3 +257,163 @@
 //SELECT std.Roll,std.Name,std.Gender,exam.GPA,exam.Group_name
 //FROM student_details as std RIGHT JOIN exam_results as exam
 //ON std.Roll=exam.Roll;
+
+//docs: UNION and UNION ALL
+//The UNION operator combines the results of two SELECT statements and returns distinct rows, eliminating any duplicates.
+
+//The UNION ALL operator also combines the results of two SELECT statements, but it includes all rows from both tables without eliminating duplicates.
+
+/*
+-- Sample data for the First batch tour group
+CREATE TABLE PROGOTI (
+  ID INT,
+  Name VARCHAR(50),
+  City VARCHAR(50)
+);
+
+INSERT INTO PROGOTI (ID, Name, City)
+VALUES (1, 'John', 'New York'),
+       (2, 'Alice', 'London'),
+       (3, 'Acme Corm', 'Sydney');
+
+-- Sample data for the Second batch tour group
+CREATE TABLE UNNAYAN (
+  ID INT,
+  Name VARCHAR(50),
+  City VARCHAR(50)
+);
+
+INSERT INTO UNNAYAN (ID, Name, City)
+VALUES (1, 'ABC Corp', 'Tokyo'),
+       (2, 'XYZ Ltd', 'Berlin'),
+       (3, 'Acme Corp', 'Sydney');
+
+-- Query using UNION operator to combine results from two tour groups
+SELECT ID, Name, City
+FROM PROGOTI
+UNION
+SELECT ID, Name, City
+FROM UNNAYAN;
+
+*/
+
+//result:
+```
+ID  | Name      | City
+----|-----------|---------
+1   | John      | New York
+2   | Alice     | London
+3   | Acme Corp | Sydney
+1   | ABC Corp  | Tokyo
+2   | XYZ Ltd   | Berlin
+
+```// note:
+// sequence should be same in both table
+// like for first table select er pore id,name,city
+//so second er khetreo same sequence thakte hobe
+// id,name,city
+
+//and also same number of column should be there in both table.mane first table e 3 column select korci so second table e o 3 column select korte hobe
+
+/*
+-- Query using UNION ALL operator to combine results from PROGOTI and UNNAYAN
+
+SELECT ID, Name, City
+FROM PROGOTI
+UNION ALL
+SELECT ID, Name, City
+FROM UNNAYAN;
+
+*/
+
+//result:
+```
+ID  | Name      | City
+----|-----------|---------
+1   | John      | New York
+2   | Alice     | London
+3   | Acme Corp | Sydney
+1   | ABC Corp  | Tokyo
+2   | XYZ Ltd   | Berlin
+3   | Acme Corp | Sydney
+```;
+
+
+// docs: VIEW
+
+// A view is a virtual table based on the result-set of an SQL statement.
+// mane ami amr full database table kaw k dekhaite chaitecina. just chaitici kicu condition ala jinish dekhuk . or table er kicu part dekhuk. tokhn view use kora hoy
+
+// CREATE VIEW view_name AS
+// SELECT column1, column2, ...
+// FROM table_name
+// WHERE condition;
+
+// SELECT * FROM view_name;
+
+// example
+
+/*
+-- Create customers table
+CREATE TABLE customers (
+  customer_id INT,
+  customer_name VARCHAR(100),
+  city VARCHAR(100)
+);
+
+-- Insert demo data into customers table
+INSERT INTO customers (customer_id, customer_name, city) VALUES
+  (1, 'John Smith', 'New York'),
+  (2, 'Jane Doe', 'Los Angeles'),
+  (3, 'David Johnson', 'Chicago');
+
+-- Create orders table
+CREATE TABLE orders (
+  order_id INT,
+  customer_id INT,
+  order_amount DECIMAL(10,2)
+);
+
+-- Insert demo data into orders table
+INSERT INTO orders (order_id, customer_id, order_amount) VALUES
+  (101, 1, 150.00),
+  (102, 1, 200.00),
+  (103, 2, 100.00),
+  (104, 3, 75.00),
+  (105, 3, 300.00);
+
+-- Create a view to get customer order summary
+CREATE VIEW customer_order_summary AS
+SELECT
+  c.customer_id,
+  c.customer_name,
+  c.city,
+  SUM(o.order_amount) AS total_order_amount
+FROM
+  customers c
+  JOIN orders o ON c.customer_id = o.customer_id
+GROUP BY
+  c.customer_id,
+  c.customer_name,
+  c.city;
+
+
+
+
+-- Query the customer_order_summary view
+SELECT * FROM customer_order_summary;
+
+
+//result:
+
+
++-------------+---------------+-------------+--------------------+
+| customer_id | customer_name | city        | total_order_amount |
++-------------+---------------+-------------+--------------------+
+| 1           | John Smith    | New York    | 350.00             |
+| 2           | Jane Doe      | Los Angeles | 100.00             |
+| 3           | David Johnson | Chicago     | 375.00             |
++-------------+---------------+-------------+--------------------+
+
+
+*/
