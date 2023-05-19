@@ -71,7 +71,7 @@
 
 //docs: as
 // SELECT Name AS "Student Name", GPA AS Student_GPA FROM student_details;
-// for firstone iv used double quotes because there has space in between them
+// for firstone i've used double quotes because there has space in between them
 
 //docs: constraints & auto increment
 
@@ -315,8 +315,7 @@ ID  | Name      | City
 1   | ABC Corp  | Tokyo
 2   | XYZ Ltd   | Berlin
 
-```// like for first table select er pore id,name,city // sequence should be same in both table // note:
-//so second er khetreo same sequence thakte hobe
+```//so second er khetreo same sequence thakte hobe // like for first table select er pore id,name,city // sequence should be same in both table // note:
 // id,name,city
 
 //and also same number of column should be there in both table.mane first table e 3 column select korci so second table e o 3 column select korte hobe
