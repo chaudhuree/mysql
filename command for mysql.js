@@ -2,6 +2,14 @@
 
 // CREATE DATABASE college;
 
+// docs: select database/ use database
+
+// USE college;
+
+// docs: delete database
+
+// DROP DATABASE college;
+
 // docs:table with name student
 
 // CREATE TABLE student(
@@ -307,9 +315,7 @@ ID  | Name      | City
 1   | ABC Corp  | Tokyo
 2   | XYZ Ltd   | Berlin
 
-```// note:
-// sequence should be same in both table
-// like for first table select er pore id,name,city
+```// like for first table select er pore id,name,city // sequence should be same in both table // note:
 //so second er khetreo same sequence thakte hobe
 // id,name,city
 
@@ -337,7 +343,6 @@ ID  | Name      | City
 2   | XYZ Ltd   | Berlin
 3   | Acme Corp | Sydney
 ```;
-
 
 // docs: VIEW
 
